@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Power BI Dashboard</title>
+  <style>
+    body { margin: 0; padding: 20px; font-family: Arial, sans-serif; text-align: center; }
+    embed { width: 100%; height: 800px; }
+  </style>
+  <style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        padding-top: 78px; /* prevent overlap with fixed navbar */
+        min-height: 150vh;
+        box-sizing: border-box;
+    }
+  
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #68dded;
+        color: black;
+        padding: 20px 0;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-sizing: border-box;
+    }
+  
+    .navbar-left {
+        display: flex;
+        align-items: center;
+        min-width: 160px;
+        flex-shrink: 0;
+    }
+  
+    .navbar-left a {
+        text-decoration: none;
+    }
+  
+    .brand-toggle {
+        position: relative;
+        width: 140px;
+        height: 38px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+  
+    #brandText, #brandImg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        transition: opacity 0.5s ease-in-out;
+        padding-left: 40px; /* 👈 Add desired left padding */
+        box-sizing: border-box;
+    }
+  
+    #brandText {
+        color: black;
+        font-weight: bold;
+        font-size: 18px;
+        margin-top: 0; /* Removed margin-top to align at the top */
+        opacity: 0; /* Start with text hidden */
+    }
+  
+    #brandImg img {
+        max-height: 100%;
+        max-width: 100%;
+        object-fit: contain;
+        opacity: 1; /* Start with image visible */
+    }
+  
+    .visible {
+        opacity: 1;
+    }
+  
+    .navbar-center {
+        flex-grow: 1;
+        text-align: center;
+        padding: 0 20px;
+    }
+  
+    .navbar-center h1 {
+        font-size: 18px;
+        font-weight: bold;
+        color: #262326;
+        margin: 0;
+        padding-left: 20px;
+        white-space: nowrap;
+    }
+  
+    .navbar-right {
+        min-width: 160px;
+        flex-shrink: 0;
+    }
+  </style>
+  
+  <script>
+    let toggleState = true;
+  
+    setInterval(() => {
+      if (toggleState) {
+        document.getElementById("brandText").style.opacity = 1;
+        document.getElementById("brandImg").style.opacity = 0;
+      } else {
+        document.getElementById("brandText").style.opacity = 0;
+        document.getElementById("brandImg").style.opacity = 1;
+      }
+      toggleState = !toggleState;
+    }, 2000);
+  </script>
+</head>
+<body>
+    <nav>
+        <div class="navbar-left">
+          <a href="index.html" class="navbar-brand">
+            <div class="brand-toggle">
+              <span id="brandText">Al Amin Ifty</span>
+              <img id="brandImg" src="logo.png" alt="Logo">
+            </div>
+          </a>
+        </div>
+        <div class="navbar-center">
+          <h1>Project: HR Analytics Dashboard using Microsoft PowerBI</h1>
+        </div>
+      </nav>
+  <embed src="hr dashboard-PowerBI.pdf" type="application/pdf">
+</body>
+</html>
